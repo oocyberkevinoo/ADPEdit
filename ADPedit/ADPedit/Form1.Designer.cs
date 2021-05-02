@@ -40,11 +40,13 @@ namespace ADPedit
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Realtime1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.Realtime2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -54,8 +56,6 @@ namespace ADPedit
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -190,6 +190,18 @@ namespace ADPedit
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(80, 155);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(125, 21);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "Enable/Disable";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Realtime1
             // 
             this.Realtime1.AutoSize = true;
@@ -274,6 +286,17 @@ namespace ADPedit
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
+            this.checkBox2.Location = new System.Drawing.Point(85, 184);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(125, 21);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "Enable/Disable";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // Realtime2
             // 
             this.Realtime2.AutoSize = true;
@@ -357,29 +380,6 @@ namespace ADPedit
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "0";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(80, 155);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 21);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "Enable/Disable";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(85, 184);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(125, 21);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Enable/Disable";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
