@@ -124,7 +124,10 @@ namespace ADPedit
                 string adpval = AdpValue.Text;
                 try
                 {
-                    curADP.ADPfuncVal = float.Parse(adpval, CultureInfo.InvariantCulture.NumberFormat);
+                    var culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                    culture.NumberFormat.NumberDecimalSeparator = ".";
+                    curADP.ADPfuncVal = float.Parse(adpval, culture);
+                    //curADP.ADPfuncVal = float.Parse(adpval, CultureInfo.InvariantCulture.NumberFormat);
                 }
                 catch (Exception)
                 {

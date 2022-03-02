@@ -83,7 +83,7 @@ namespace ADPedit
             // TimeValue
             // 
             this.TimeValue.Location = new System.Drawing.Point(56, 67);
-            this.TimeValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimeValue.Margin = new System.Windows.Forms.Padding(2);
             this.TimeValue.Name = "TimeValue";
             this.TimeValue.Size = new System.Drawing.Size(102, 20);
             this.TimeValue.TabIndex = 3;
@@ -107,7 +107,7 @@ namespace ADPedit
             this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(9, 184);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.MaximumSize = new System.Drawing.Size(698, 790);
             this.listBox1.MinimumSize = new System.Drawing.Size(350, 355);
             this.listBox1.Name = "listBox1";
@@ -121,7 +121,7 @@ namespace ADPedit
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 538);
+            this.label2.Location = new System.Drawing.Point(23, 541);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.MaximumSize = new System.Drawing.Size(648, 28);
             this.label2.MinimumSize = new System.Drawing.Size(324, 14);
@@ -135,7 +135,7 @@ namespace ADPedit
             // AdpValue
             // 
             this.AdpValue.Location = new System.Drawing.Point(56, 106);
-            this.AdpValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdpValue.Margin = new System.Windows.Forms.Padding(2);
             this.AdpValue.Name = "AdpValue";
             this.AdpValue.Size = new System.Drawing.Size(102, 20);
             this.AdpValue.TabIndex = 7;
@@ -188,7 +188,7 @@ namespace ADPedit
             "Handheld Resolution",
             "Docked Resolution"});
             this.comboBox1.Location = new System.Drawing.Point(19, 34);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(140, 21);
             this.comboBox1.TabIndex = 9;
@@ -207,9 +207,9 @@ namespace ADPedit
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(11, 25);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(169, 154);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -220,7 +220,7 @@ namespace ADPedit
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(60, 126);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(99, 17);
             this.checkBox1.TabIndex = 18;
@@ -283,7 +283,7 @@ namespace ADPedit
             "Handheld Resolution",
             "Docked Resolution"});
             this.comboBox2.Location = new System.Drawing.Point(15, 34);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(140, 21);
             this.comboBox2.TabIndex = 13;
@@ -313,9 +313,9 @@ namespace ADPedit
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Location = new System.Drawing.Point(184, 25);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(173, 154);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
@@ -326,7 +326,7 @@ namespace ADPedit
             this.checkBox2.AutoSize = true;
             this.checkBox2.Enabled = false;
             this.checkBox2.Location = new System.Drawing.Point(64, 126);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(99, 17);
             this.checkBox2.TabIndex = 19;
@@ -387,7 +387,7 @@ namespace ADPedit
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(59, 106);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(99, 20);
             this.textBox2.TabIndex = 11;
@@ -398,7 +398,7 @@ namespace ADPedit
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(60, 67);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(99, 20);
             this.textBox1.TabIndex = 10;
@@ -440,7 +440,7 @@ namespace ADPedit
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -448,7 +448,7 @@ namespace ADPedit
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
             this.saveToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(195, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.saveToolStripMenuItem1.Text = "Save";
             this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
@@ -457,7 +457,7 @@ namespace ADPedit
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.saveToolStripMenuItem.Text = "Save As...";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -465,7 +465,7 @@ namespace ADPedit
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -473,7 +473,7 @@ namespace ADPedit
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Visible = false;
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
@@ -492,7 +492,7 @@ namespace ADPedit
             // 
             this.addFunctionAtPosToolStripMenuItem.Name = "addFunctionAtPosToolStripMenuItem";
             this.addFunctionAtPosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.addFunctionAtPosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.addFunctionAtPosToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.addFunctionAtPosToolStripMenuItem.Text = "Add Function at Pos.";
             this.addFunctionAtPosToolStripMenuItem.Click += new System.EventHandler(this.addFunctionAtPosToolStripMenuItem_Click);
             // 
@@ -500,7 +500,7 @@ namespace ADPedit
             // 
             this.removeSelectedFunctionToolStripMenuItem.Name = "removeSelectedFunctionToolStripMenuItem";
             this.removeSelectedFunctionToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.removeSelectedFunctionToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.removeSelectedFunctionToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.removeSelectedFunctionToolStripMenuItem.Text = "Remove Selected Function";
             this.removeSelectedFunctionToolStripMenuItem.Click += new System.EventHandler(this.removeSelectedFunctionToolStripMenuItem_Click);
             // 
@@ -618,7 +618,7 @@ namespace ADPedit
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(566, 816);
             this.MinimumSize = new System.Drawing.Size(379, 600);
