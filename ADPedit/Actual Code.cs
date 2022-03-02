@@ -114,7 +114,7 @@ namespace ADPedit
                         }
                         else
                         {
-                            bw.Write((float) adp.ADPfuncVal);
+                            bw.Write(adp.ADPfuncVal);
                         }
                     }
                     bw.Write(0x00);
