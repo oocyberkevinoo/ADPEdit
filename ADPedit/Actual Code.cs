@@ -42,12 +42,12 @@ namespace ADPedit
                         var FinalFunc = new adpFunc() //make a new adp function and store it in the FinalFunc var so it can be used in funcDetect
                         {
                             TimeID = br.ReadUInt32(),
-                            timeSecondsMarker = br.ReadSingle(),
+                            timeSecondsMarker = (float) br.ReadSingle()*1.0f,
                             unk = br.ReadInt32(),
                             frameTime = br.ReadInt32(),
                             padding = br.ReadDouble(),
                             ADPfuncID = br.ReadUInt32(),
-                            ADPfuncVal = br.ReadSingle(),
+                            ADPfuncVal = (float) br.ReadSingle()*1.0f,
                             ADPfuncName = null,
                         };
                         FuncDetect(FinalFunc); //push FinalFunc into funcDetect
@@ -114,7 +114,7 @@ namespace ADPedit
                         }
                         else
                         {
-                            bw.Write(adp.ADPfuncVal);
+                            bw.Write((float) adp.ADPfuncVal);
                         }
                     }
                     bw.Write(0x00);
