@@ -9,9 +9,11 @@ namespace ADPedit
     public class adpFunc //make a struct with all the values from an adp function
     {
         public uint TimeID;
-        public float timeSecondsMarker;
-        public int unk;
+        public byte[] timeSecondsMarker;
+        public float TimeSeconds;
         public int frameTime;
+        public int unk2;
+        public int unk3;
         public double padding;
         public uint ADPfuncID;
         public bool is30fps;
@@ -25,5 +27,8 @@ namespace ADPedit
         public int dataLength;
         public int unk1;
         public int offset;
+        public int unk2;
+        public int unk3;
+        public byte[] unkLayout;
     }
 }

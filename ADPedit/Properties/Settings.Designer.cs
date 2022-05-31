@@ -46,7 +46,22 @@ namespace ADPedit.Properties {
                 this["showFrame"] = value;
             }
         }
-        
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool showTrigger
+        {
+            get
+            {
+                return ((bool)(this["showTrigger"]));
+            }
+            set
+            {
+                this["showTrigger"] = value;
+            }
+        }
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]

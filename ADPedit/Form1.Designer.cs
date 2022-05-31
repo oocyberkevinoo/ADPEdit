@@ -39,13 +39,17 @@ namespace ADPedit
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.adpTrig = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Realtime1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.Realtime2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,6 +70,7 @@ namespace ADPedit
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showUnk = new System.Windows.Forms.ToolStripMenuItem();
             this.showFrame = new System.Windows.Forms.ToolStripMenuItem();
+            this.showTriggerUnknownValToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showValue = new System.Windows.Forms.ToolStripMenuItem();
             this.macrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rGBTo1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,12 +111,12 @@ namespace ADPedit
             // 
             this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(9, 184);
+            this.listBox1.Location = new System.Drawing.Point(9, 212);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.MaximumSize = new System.Drawing.Size(698, 790);
             this.listBox1.MinimumSize = new System.Drawing.Size(350, 355);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(350, 355);
+            this.listBox1.Size = new System.Drawing.Size(350, 368);
             this.listBox1.TabIndex = 5;
             this.toolTip1.SetToolTip(this.listBox1, "This is the collection of ADP Functions found\r\nin the currently selected ADP file" +
         ".");
@@ -121,7 +126,7 @@ namespace ADPedit
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 541);
+            this.label2.Location = new System.Drawing.Point(23, 597);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.MaximumSize = new System.Drawing.Size(648, 28);
             this.label2.MinimumSize = new System.Drawing.Size(324, 14);
@@ -160,29 +165,41 @@ namespace ADPedit
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Brightness",
-            "Outline Transparency",
+            "Generic Lighting",
+            "Stage Lighting",
+            "---",
+            "Character Lighting",
+            "Character Lightness",
             "Character Light (RED)",
             "Character Light (GREEN)",
             "Character Light (BLUE)",
             "Red Light",
             "Green Light",
             "Blue Light",
-            "Spec. Map Transparency",
-            "Character Lighting",
-            "Character Lightness",
-            "Generic Lighting",
             "Skin Shine",
-            "Eye Lighting",
+            "Inner Skin Shine",
+            "Skin Matify? (1)",
+            "Skin Matify? (2)",
             "Skin Toon Intensity",
+            "Celshading Body",
+            "Celshading Clothes/Hair",
             "BLINN Lighting",
             "Cloth Lighting",
             "Item Lighting",
             "Hair Lighting",
-            "Stage Lighting",
             "Hair Shine",
+            "Eye Lighting",
+            "Eye Colour Saturation",
+            "Eye Reflect. Red",
+            "Eye Reflect. Green",
+            "Eye Reflect. Blue",
+            "Celshading Eyelid",
+            "---",
+            "Outline Transparency",
+            "Spec. Map Transparency",
             "Bloom",
             "Dimness",
-            "Eye Colour Saturation",
+            "---",
             "Handheld 30FPS Limit",
             "Docked 30FPS Limit",
             "Handheld Resolution",
@@ -197,6 +214,8 @@ namespace ADPedit
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.adpTrig);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.Realtime1);
             this.groupBox1.Controls.Add(this.label8);
@@ -210,10 +229,33 @@ namespace ADPedit
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(169, 154);
+            this.groupBox1.Size = new System.Drawing.Size(169, 183);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
+            // 
+            // adpTrig
+            // 
+            this.adpTrig.Location = new System.Drawing.Point(56, 155);
+            this.adpTrig.Margin = new System.Windows.Forms.Padding(2);
+            this.adpTrig.Name = "adpTrig";
+            this.adpTrig.Size = new System.Drawing.Size(102, 20);
+            this.adpTrig.TabIndex = 20;
+            this.adpTrig.Text = "0";
+            this.toolTip1.SetToolTip(this.adpTrig, "The value you would like to use for the function.\r\nDecimal values are acceptable." +
+        "");
+            this.adpTrig.TextChanged += new System.EventHandler(this.adpTrig_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 158);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Trig:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // checkBox1
             // 
@@ -255,29 +297,41 @@ namespace ADPedit
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Brightness",
-            "Outline Transparency",
+            "Generic Lighting",
+            "Stage Lighting",
+            "---",
+            "Character Lighting",
+            "Character Lightness",
             "Character Light (RED)",
             "Character Light (GREEN)",
             "Character Light (BLUE)",
             "Red Light",
             "Green Light",
             "Blue Light",
-            "Spec. Map Transparency",
-            "Character Lighting",
-            "Character Lightness",
-            "Generic Lighting",
             "Skin Shine",
-            "Eye Lighting",
+            "Inner Skin Shine",
+            "Skin Matify? (1)",
+            "Skin Matify? (2)",
             "Skin Toon Intensity",
+            "Celshading Body",
+            "Celshading Clothes/Hair",
             "BLINN Lighting",
             "Cloth Lighting",
             "Item Lighting",
             "Hair Lighting",
-            "Stage Lighting",
             "Hair Shine",
+            "Eye Lighting",
+            "Eye Colour Saturation",
+            "Eye Reflect. Red",
+            "Eye Reflect. Green",
+            "Eye Reflect. Blue",
+            "Celshading Eyelid",
+            "---",
+            "Outline Transparency",
+            "Spec. Map Transparency",
             "Bloom",
             "Dimness",
-            "Eye Colour Saturation",
+            "---",
             "Handheld 30FPS Limit",
             "Docked 30FPS Limit",
             "Handheld Resolution",
@@ -303,7 +357,9 @@ namespace ADPedit
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.Realtime2);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label6);
@@ -316,10 +372,22 @@ namespace ADPedit
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(173, 154);
+            this.groupBox2.Size = new System.Drawing.Size(173, 183);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(56, 155);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(102, 20);
+            this.textBox3.TabIndex = 22;
+            this.textBox3.Text = "0";
+            this.toolTip1.SetToolTip(this.textBox3, "The value you would like to use for the function.\r\nDecimal values are acceptable." +
+        "");
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // checkBox2
             // 
@@ -333,6 +401,16 @@ namespace ADPedit
             this.checkBox2.Text = "Enable/Disable";
             this.toolTip1.SetToolTip(this.checkBox2, "Check this box to enable the function.\r\nUncheck this box to disable it.\r\n");
             this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 158);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(28, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Trig:";
             // 
             // Realtime2
             // 
@@ -487,6 +565,7 @@ namespace ADPedit
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.createToolStripMenuItem.Text = "Create";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // addFunctionAtPosToolStripMenuItem
             // 
@@ -509,6 +588,7 @@ namespace ADPedit
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showUnk,
             this.showFrame,
+            this.showTriggerUnknownValToolStripMenuItem,
             this.showValue});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -521,7 +601,7 @@ namespace ADPedit
             this.showUnk.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showUnk.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.showUnk.Name = "showUnk";
-            this.showUnk.Size = new System.Drawing.Size(212, 22);
+            this.showUnk.Size = new System.Drawing.Size(214, 22);
             this.showUnk.Text = "Show Unknown Functions";
             this.showUnk.Click += new System.EventHandler(this.showUnk_Click);
             // 
@@ -532,9 +612,20 @@ namespace ADPedit
             this.showFrame.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showFrame.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.showFrame.Name = "showFrame";
-            this.showFrame.Size = new System.Drawing.Size(212, 22);
+            this.showFrame.Size = new System.Drawing.Size(214, 22);
             this.showFrame.Text = "Show Frame on List";
             this.showFrame.Click += new System.EventHandler(this.showFrame_Click);
+            // 
+            // showTriggerUnknownValToolStripMenuItem
+            // 
+            this.showTriggerUnknownValToolStripMenuItem.Checked = true;
+            this.showTriggerUnknownValToolStripMenuItem.CheckOnClick = true;
+            this.showTriggerUnknownValToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showTriggerUnknownValToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.showTriggerUnknownValToolStripMenuItem.Name = "showTriggerUnknownValToolStripMenuItem";
+            this.showTriggerUnknownValToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.showTriggerUnknownValToolStripMenuItem.Text = "Show Trigger Unknown Val";
+            this.showTriggerUnknownValToolStripMenuItem.Click += new System.EventHandler(this.showTriggerUnknownValToolStripMenuItem_Click);
             // 
             // showValue
             // 
@@ -543,7 +634,7 @@ namespace ADPedit
             this.showValue.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showValue.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.showValue.Name = "showValue";
-            this.showValue.Size = new System.Drawing.Size(212, 22);
+            this.showValue.Size = new System.Drawing.Size(214, 22);
             this.showValue.Text = "Show Value on List";
             this.showValue.Click += new System.EventHandler(this.showValue_Click);
             // 
@@ -609,7 +700,7 @@ namespace ADPedit
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(368, 561);
+            this.ClientSize = new System.Drawing.Size(368, 617);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -621,7 +712,7 @@ namespace ADPedit
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(566, 816);
-            this.MinimumSize = new System.Drawing.Size(379, 600);
+            this.MinimumSize = new System.Drawing.Size(384, 656);
             this.Name = "Form1";
             this.Text = "ADPEdit";
             this.groupBox1.ResumeLayout(false);
@@ -680,6 +771,11 @@ namespace ADPedit
         private System.Windows.Forms.ToolStripMenuItem frameToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disableRGBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showTriggerUnknownValToolStripMenuItem;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox adpTrig;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label10;
     }
 }
 

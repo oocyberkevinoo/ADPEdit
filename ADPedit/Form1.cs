@@ -21,6 +21,7 @@ namespace ADPedit
             this.DragEnter += new DragEventHandler(Form1_DragEnter);
             this.DragDrop += new DragEventHandler(Form1_DragDrop);
             this.showFrame.Checked = Settings.Default.showFrame;
+            this.showTriggerUnknownValToolStripMenuItem.Checked = Settings.Default.showTrigger;
             this.showUnk.Checked = Settings.Default.showUnk;
             this.showValue.Checked = Settings.Default.showVal;
         }
@@ -61,7 +62,8 @@ namespace ADPedit
                     string adpval = curADP.ADPfuncVal.ToString();
                     AdpValue.Text = adpval;
                     AdpValue.Enabled = true;
-                    if (curADP.ADPfuncName != "Unknown Function")
+                    adpTrig.Text = BitConverter.ToString(curADP.timeSecondsMarker).Replace("-", "") ;
+                    if (curADP.ADPfuncName != "Unk.")
                     {
                         comboBox2.Enabled = true;
                         checkBox1.Enabled = false;
@@ -96,6 +98,7 @@ namespace ADPedit
 
         private void TimeValue_TextChanged(object sender, EventArgs e)
         {
+            float calcTime = float.Parse(TimeValue.Text) / 60;
             if (Code.adps.Count > 0)
             {
                 adpFunc curADP = Code.adps[listBox1.SelectedIndex];
@@ -103,13 +106,15 @@ namespace ADPedit
                 {
                     string adptime = TimeValue.Text;
                     curADP.frameTime = int.Parse(adptime, CultureInfo.InvariantCulture.NumberFormat);
+                    curADP.TimeSeconds = calcTime;
                 }
                 catch (Exception) { }
             }
             try
             {
-                float calcTime = float.Parse(TimeValue.Text) / 60;
+                
                 Realtime1.Text = calcTime.ToString("0.00");
+                
             }
             catch (Exception) {
                 Realtime1.Text = "0.00";
@@ -140,6 +145,7 @@ namespace ADPedit
         {
             float funcValRead;
             int frameTimeRead;
+            byte[] unk;
             try
             {
                 if (textBox1.Text != null && textBox2.Text != null)
@@ -152,12 +158,20 @@ namespace ADPedit
                     frameTimeRead = 0;
                     funcValRead = 0f;
                 }
+                if (textBox3.Text.Length == 8 )
+                {
+                    unk = ConvertHexStringToByteArray(textBox3.Text);
+                }
+                else
+                {
+                    unk = Code.headerlist[0].unkLayout;
+                }
                 var newFunc = new adpFunc() //make a new adp function and store it in the FinalFunc var so it can be used in funcDetect
                 {
                     TimeID = 0,
-                    unk = 0,
+                    TimeSeconds = 0,
                     frameTime = frameTimeRead,
-                    timeSecondsMarker = 0,
+                    timeSecondsMarker = unk,
                     padding = 0,
                     ADPfuncID = 0,
                     ADPfuncVal = funcValRead,
@@ -179,6 +193,7 @@ namespace ADPedit
             Settings.Default.Upgrade();
             Settings.Default.showUnk = showUnk.Checked;
             Settings.Default.showFrame = showFrame.Checked;
+            Settings.Default.showTrigger = showTriggerUnknownValToolStripMenuItem.Checked;
             Settings.Default.showVal = showValue.Checked;
             Settings.Default.Save();
         }
@@ -187,19 +202,30 @@ namespace ADPedit
             var dummy = new List<string>(); // Init a new list<string> since thats what listboxes take
             for (int i = 0; i < Code.adps.Count; i++) // get each adp and do something with them
             {
+
                 string frameTime = null;
                 string unkFuncID = null;
                 string adpVal = null;
+                string adpTrig = null;
                 string adpFunc = Code.adps[i].ADPfuncName;
+                string trigByteString = "";
+                /*foreach (Byte data in Code.adps[i].timeSecondsMarker)
+                {
+                    trigByteString += data.ToString("00");
+                }*/
+                trigByteString = BitConverter.ToString(Code.adps[i].timeSecondsMarker);
+                if(Settings.Default.showTrigger == true)
+                    adpTrig = "{"+ trigByteString + "}  ";
+
                 if (Settings.Default.showFrame == true)
                 {
-                    frameTime = "[" + Code.adps[i].frameTime.ToString() + "]  ";
+                    frameTime = "[" + Code.adps[i].frameTime.ToString() + "] ";
                 }
                 if (Settings.Default.showVal == true)
                 {
                     adpVal = ":  " + Code.adps[i].ADPfuncVal.ToString();
                 }
-                if (adpFunc == "Unknown Function")
+                if (adpFunc == "Unk.")
                 {
                     if(Settings.Default.showUnk == false)
                     {
@@ -207,7 +233,7 @@ namespace ADPedit
                         dummy.Add(x);
                         continue;
                     }
-                    unkFuncID = "                               (ID: " + Code.adps[i].ADPfuncID.ToString() + ")";
+                    unkFuncID = " (ID: " + Code.adps[i].ADPfuncID.ToString() + ")";
                 }
                 if (adpFunc == "Docked 30FPS Limit" & Settings.Default.showVal == true || adpFunc == "Handheld 30FPS Limit" & Settings.Default.showVal == true)
                 {
@@ -224,8 +250,8 @@ namespace ADPedit
                         continue;
                     }
                 }
-                string listName = frameTime + adpFunc + adpVal + unkFuncID;
-                if(adpFunc == "Unknown Function" & Settings.Default.showUnk == false)
+                string listName = frameTime + adpTrig + adpFunc + adpVal + unkFuncID;
+                if(adpFunc == "Unk." & Settings.Default.showUnk == false)
                 {
                     continue;
                 }
@@ -242,7 +268,7 @@ namespace ADPedit
             if (Code.adps.Count > 0)
             {
                 adpFunc curADP = Code.adps[listBox1.SelectedIndex];
-                if (curADP.ADPfuncName != "Unknown Function" && curADP.ADPfuncName != comboBox2.Text)
+                if (curADP.ADPfuncName != "Unk." && curADP.ADPfuncName != comboBox2.Text)
                 {
                     try
                     {
@@ -379,6 +405,11 @@ namespace ADPedit
             updateSettings();
             refreshList();
         }
+        private void showTriggerUnknownValToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updateSettings();
+            refreshList();
+        }
 
         private void showValue_Click(object sender, EventArgs e)
         {
@@ -499,6 +530,56 @@ namespace ADPedit
                 }
             }
             refreshList();
+        }
+
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public static byte[] ConvertHexStringToByteArray(string hexString)
+        {
+            if (hexString.Length % 2 != 0)
+            {
+                throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, "The binary key cannot have an odd number of digits: {0}", hexString));
+            }
+
+            byte[] data = new byte[hexString.Length / 2];
+            for (int index = 0; index < data.Length; index++)
+            {
+                string byteValue = hexString.Substring(index * 2, 2);
+                data[index] = byte.Parse(byteValue, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+            }
+
+            return data;
+        }
+
+        private void adpTrig_TextChanged(object sender, EventArgs e)
+        {
+            if (Code.adps.Count > 0)
+            {
+                adpFunc curADP = Code.adps[listBox1.SelectedIndex];
+                byte[] adpTriVal;
+                try
+                {
+                    adpTriVal = ConvertHexStringToByteArray(adpTrig.Text);
+                    curADP.timeSecondsMarker = adpTriVal;
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
