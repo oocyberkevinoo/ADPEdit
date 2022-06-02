@@ -126,14 +126,15 @@ namespace ADPedit
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 597);
+            this.label2.Location = new System.Drawing.Point(23, 588);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.MaximumSize = new System.Drawing.Size(648, 28);
             this.label2.MinimumSize = new System.Drawing.Size(324, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(324, 14);
+            this.label2.Size = new System.Drawing.Size(324, 26);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Program by Jay39w. Special thanks to BroGamer and korenkonder!";
+            this.label2.Text = "Program by Jay39w. Special thanks to BroGamer and korenkonder!\r\nUpdated by CyberK" +
+    "evin";
             this.toolTip1.SetToolTip(this.label2, "Huge thanks to BroGamer for helping me\r\nwith the code used in this project!\r\nAlso" +
         " many thanks to korenkonder for figuring\r\nout the header format for ADP files!");
             // 
