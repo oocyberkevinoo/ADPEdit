@@ -153,22 +153,22 @@ namespace ADPedit
                     adp.ADPfuncName = "Character Light (BLUE)";
                     break;
                 case 6:
-                    adp.ADPfuncName = "Red Light";
+                    adp.ADPfuncName = "Character Color (RED)";
                     break;
                 case 7:
-                    adp.ADPfuncName = "Green Light";
+                    adp.ADPfuncName = "Character Color (GREEN)";
                     break;
                 case 8:
-                    adp.ADPfuncName = "Blue Light";
+                    adp.ADPfuncName = "Character Color (BLUE)";
                     break;
                 case 10:
-                    adp.ADPfuncName = "Eye Reflect. Red";
+                    adp.ADPfuncName = "Reflection (RED)";
                     break;
                 case 11:
-                    adp.ADPfuncName = "Eye Reflect. Green";
+                    adp.ADPfuncName = "Reflection (GREEN)";
                     break;
                 case 12:
-                    adp.ADPfuncName = "Eye Reflect. Blue";
+                    adp.ADPfuncName = "Reflection (BLUE)";
                     break;
                 case 14:
                     adp.ADPfuncName = "Spec. Map Transparency";
@@ -183,7 +183,7 @@ namespace ADPedit
                     adp.ADPfuncName = "Skin Shine";
                     break;
                 case 21:
-                    adp.ADPfuncName = "Outline Transparency";
+                    adp.ADPfuncName = "Celshading Thickness";
                     break;
                 case 22:
                     adp.ADPfuncName = "Celshading Eyelid";
@@ -207,7 +207,7 @@ namespace ADPedit
                     adp.ADPfuncName = "Cloth Lighting";
                     break;
                 case 43:
-                    adp.ADPfuncName = "Item Lighting";
+                    adp.ADPfuncName = "Item/Facial Lighting";
                     break;
                 case 44:
                     adp.ADPfuncName = "Hair Lighting";
@@ -228,10 +228,10 @@ namespace ADPedit
                     adp.ADPfuncName = "Inner Skin Shine";
                     break;
                 case 62:
-                    adp.ADPfuncName = "Skin Matify? (1)";
+                    adp.ADPfuncName = "Shadow Intensity";
                     break;
                 case 63:
-                    adp.ADPfuncName = "Skin Matify? (2)";
+                    adp.ADPfuncName = "Shadow Opacity";
                     break;
                 case 72:
                     adp.ADPfuncName = "Eye Colour Saturation";
@@ -274,22 +274,22 @@ namespace ADPedit
                 case "Character Light (BLUE)":
                     newadp.ADPfuncID = 4;
                     break;
-                case "Red Light":
+                case "Character Color (RED)":
                     newadp.ADPfuncID = 6;
                     break;
-                case "Green Light":
+                case "Character Color (GREEN)":
                     newadp.ADPfuncID = 7;
                     break;
-                case "Blue Light":
+                case "Character Color (BLUE)":
                     newadp.ADPfuncID = 8;
                     break;
-                case "Eye Reflect. Red":
+                case "Reflection (RED)":
                     newadp.ADPfuncID = 10;
                     break;
-                case "Eye Reflect. Green":
+                case "Reflection (GREEN)":
                     newadp.ADPfuncID = 11;
                     break;
-                case "Eye Reflect. Blue":
+                case "Reflection (BLUE)":
                     newadp.ADPfuncID = 12;
                     break;
                 case "Spec. Map Transparency":
@@ -301,7 +301,7 @@ namespace ADPedit
                 case "Generic Lighting":
                     newadp.ADPfuncID = 17;
                     break;
-                case "Outline Transparency":
+                case "Celshading Thickness":
                     newadp.ADPfuncID = 21;
                     break;
                 case "Skin Shine":
@@ -328,7 +328,7 @@ namespace ADPedit
                 case "Cloth Lighting":
                     newadp.ADPfuncID = 42;
                     break;
-                case "Item Lighting":
+                case "Item/Facial Lighting":
                     newadp.ADPfuncID = 43;
                     break;
                 case "Hair Lighting":
@@ -349,10 +349,10 @@ namespace ADPedit
                 case "Inner Skin Shine":
                     newadp.ADPfuncID = 61;
                     break;
-                case "Skin Matify? (1)":
+                case "Shadow Intensity":
                     newadp.ADPfuncID = 62;
                     break;
-                case "Skin Matify? (2)":
+                case "Shadow Opacity":
                     newadp.ADPfuncID = 63;
                     break;
                 case "Eye Colour Saturation":
