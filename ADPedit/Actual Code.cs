@@ -141,6 +141,9 @@ namespace ADPedit
             //Detect ADP Function using the ID it gives us
             switch (adp.ADPfuncID)
             {
+                case 0:
+                    adp.ADPfuncName = "Alternative PV flag";
+                    break;
                 case 1:
                     adp.ADPfuncName = "Brightness";
                     break;
@@ -263,6 +266,9 @@ namespace ADPedit
             //Give the newadp variable ADPfuncName and ADPfuncID based on what the current selection is in either comboBox
             switch (curText)
             {
+                case "Alternative PV flag":
+                    newadp.ADPfuncID = 0;
+                    break;
                 case "Brightness":
                     newadp.ADPfuncID = 1;
                     break;

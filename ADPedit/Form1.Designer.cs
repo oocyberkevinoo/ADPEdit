@@ -206,7 +206,8 @@ namespace ADPedit
             "Handheld 30FPS Limit",
             "Docked 30FPS Limit",
             "Handheld Resolution",
-            "Docked Resolution"});
+            "Docked Resolution",
+            "Alternative PV flag"});
             this.comboBox1.Location = new System.Drawing.Point(19, 34);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
@@ -339,7 +340,8 @@ namespace ADPedit
             "Handheld 30FPS Limit",
             "Docked 30FPS Limit",
             "Handheld Resolution",
-            "Docked Resolution"});
+            "Docked Resolution",
+            "Alternative PV flag"});
             this.comboBox2.Location = new System.Drawing.Point(15, 34);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
