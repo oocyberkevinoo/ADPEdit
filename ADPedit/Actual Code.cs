@@ -29,33 +29,29 @@ namespace ADPedit
                     {
                         var headerStorage = new adpHeader()
                         {
-                            count = br.ReadInt32(),
-                            unk0 = br.ReadInt32(),
-                            dataLength = br.ReadInt32(),
-                            unk1 = br.ReadInt32(),
-                            offset = br.ReadInt32(),
-                            unk2 = br.ReadInt32(),
-                            unk3 = br.ReadInt32(),
-                            unkLayout = br.ReadBytes(4)
+                            count = br.ReadInt64(),
+                            dataLength = br.ReadInt64(),
+                            offset = br.ReadInt64(),
+
                         };
                         headerlist.Add(headerStorage);
                     }
-                    br.BaseStream.Position = 0x34; //skip past the adp header
+                    //br.BaseStream.Position = 0x34; //skip past the adp header
                     var count = br.BaseStream.Length / sizeof(int);
                     for (var i = 0; i < count; i++)
                     {
                         var FinalFunc = new adpFunc() //make a new adp function and store it in the FinalFunc var so it can be used in funcDetect
                         {
-                            TimeID = br.ReadUInt32(),
+                            
                             TimeSeconds = br.ReadSingle(),
                             timeSecondsMarker = br.ReadBytes(4),
                             frameTime = br.ReadInt32(),
-                            //padding = br.ReadDouble(),
                             unk2 = br.ReadInt32(),
                             altFlag = br.ReadInt32(),
                             ADPfuncID = br.ReadUInt32(),
                             ADPfuncVal = br.ReadSingle(),
                             ADPfuncName = null,
+                            Padding = br.ReadUInt32(),
                         };
                         FuncDetect(FinalFunc); //push FinalFunc into funcDetect
                     }
@@ -91,27 +87,18 @@ namespace ADPedit
                 bool didWrite = false;
                 if (!didWrite)
                 {
-                    Code.headerlist[0].count = (Code.adps.Count + 1);
-                    Code.headerlist[0].dataLength = (Code.adps.Count * 2 * 16) + 32;
+                    Code.headerlist[0].count = (Code.adps.Count /*+ 1*/);
+                    Code.headerlist[0].dataLength = (Code.adps.Count * 2 * 16) /*+ 32*/;
                     foreach (adpHeader headerStorage in Code.headerlist)
                     {
                         bw.Write(headerStorage.count);
-                        bw.Write(headerStorage.unk0);
                         bw.Write(headerStorage.dataLength);
-                        bw.Write(headerStorage.unk1);
                         bw.Write(headerStorage.offset);
-                        bw.Write(headerStorage.unk2);
-                        bw.Write(headerStorage.unk3);
-                        bw.Write(headerStorage.unkLayout);
-                        for (int i = 0; i < 4; i++)
-                        {
-                            bw.Write(0x00);
-                        }
-                        bw.Write(1);
+
                     }
                     foreach (adpFunc adp in Code.adps)
                     {
-                        bw.Write(adp.TimeID);
+                        
                         bw.Write(adp.TimeSeconds);
                         bw.Write(adp.timeSecondsMarker);
                         bw.Write(adp.frameTime);
@@ -127,8 +114,10 @@ namespace ADPedit
                         {
                             bw.Write(adp.ADPfuncVal);
                         }
+
+                        bw.Write(adp.Padding);
                     }
-                    bw.Write(0x00);
+                    
                     didWrite = true;
                 }
                 bw.Close();

@@ -181,7 +181,7 @@ namespace ADPedit
 
                 var newFunc = new adpFunc() //make a new adp function and store it in the FinalFunc var so it can be used in funcDetect
                 {
-                    TimeID = 0,
+                    Padding = 0,
                     TimeSeconds = 0,
                     frameTime = frameTimeRead,
                     timeSecondsMarker = unk,
