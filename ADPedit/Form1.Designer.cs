@@ -80,6 +80,8 @@ namespace ADPedit
             this.frameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.frameToolStripMenuItem = new System.Windows.Forms.ToolStripTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBox_ALT_edit = new System.Windows.Forms.CheckBox();
+            this.checkBox_ALT = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -111,7 +113,7 @@ namespace ADPedit
             // 
             this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(9, 212);
+            this.listBox1.Location = new System.Drawing.Point(9, 232);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.MaximumSize = new System.Drawing.Size(698, 790);
             this.listBox1.MinimumSize = new System.Drawing.Size(350, 355);
@@ -126,7 +128,7 @@ namespace ADPedit
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 588);
+            this.label2.Location = new System.Drawing.Point(23, 628);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.MaximumSize = new System.Drawing.Size(648, 28);
             this.label2.MinimumSize = new System.Drawing.Size(324, 14);
@@ -215,6 +217,7 @@ namespace ADPedit
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox_ALT_edit);
             this.groupBox1.Controls.Add(this.adpTrig);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.checkBox1);
@@ -230,7 +233,7 @@ namespace ADPedit
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(169, 183);
+            this.groupBox1.Size = new System.Drawing.Size(169, 203);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
@@ -358,6 +361,7 @@ namespace ADPedit
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.checkBox_ALT);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.label10);
@@ -373,7 +377,7 @@ namespace ADPedit
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(173, 183);
+            this.groupBox2.Size = new System.Drawing.Size(173, 203);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create";
@@ -695,13 +699,38 @@ namespace ADPedit
             this.frameToolStripMenuItem.Text = "0";
             this.frameToolStripMenuItem.ToolTipText = "The frame on which you\'d like the macro to run";
             // 
+            // checkBox_ALT_edit
+            // 
+            this.checkBox_ALT_edit.AutoSize = true;
+            this.checkBox_ALT_edit.Location = new System.Drawing.Point(60, 179);
+            this.checkBox_ALT_edit.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_ALT_edit.Name = "checkBox_ALT_edit";
+            this.checkBox_ALT_edit.Size = new System.Drawing.Size(55, 17);
+            this.checkBox_ALT_edit.TabIndex = 21;
+            this.checkBox_ALT_edit.Text = "Alt PV";
+            this.toolTip1.SetToolTip(this.checkBox_ALT_edit, "Check this box to enable the function.\r\nUncheck this box to disable it.");
+            this.checkBox_ALT_edit.UseVisualStyleBackColor = true;
+            this.checkBox_ALT_edit.CheckedChanged += new System.EventHandler(this.checkBox_ALT_edit_CheckedChanged);
+            // 
+            // checkBox_ALT
+            // 
+            this.checkBox_ALT.AutoSize = true;
+            this.checkBox_ALT.Location = new System.Drawing.Point(64, 179);
+            this.checkBox_ALT.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_ALT.Name = "checkBox_ALT";
+            this.checkBox_ALT.Size = new System.Drawing.Size(55, 17);
+            this.checkBox_ALT.TabIndex = 22;
+            this.checkBox_ALT.Text = "Alt PV";
+            this.toolTip1.SetToolTip(this.checkBox_ALT, "Check this box to enable the function.\r\nUncheck this box to disable it.");
+            this.checkBox_ALT.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(368, 617);
+            this.ClientSize = new System.Drawing.Size(368, 657);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -777,6 +806,8 @@ namespace ADPedit
         private System.Windows.Forms.TextBox adpTrig;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox checkBox_ALT_edit;
+        private System.Windows.Forms.CheckBox checkBox_ALT;
     }
 }
 

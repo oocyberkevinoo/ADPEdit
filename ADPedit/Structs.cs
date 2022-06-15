@@ -13,7 +13,7 @@ namespace ADPedit
         public float TimeSeconds;
         public int frameTime;
         public int unk2;
-        public int unk3;
+        public int altFlag;
         public double padding;
         public uint ADPfuncID;
         public bool is30fps;

@@ -52,7 +52,7 @@ namespace ADPedit
                             frameTime = br.ReadInt32(),
                             //padding = br.ReadDouble(),
                             unk2 = br.ReadInt32(),
-                            unk3 = br.ReadInt32(),
+                            altFlag = br.ReadInt32(),
                             ADPfuncID = br.ReadUInt32(),
                             ADPfuncVal = br.ReadSingle(),
                             ADPfuncName = null,
@@ -81,6 +81,7 @@ namespace ADPedit
         public static void updateADP()
         {
             saveFile(filePathString);
+            
         }
 
         public static void saveFile(string path)
@@ -115,7 +116,7 @@ namespace ADPedit
                         bw.Write(adp.timeSecondsMarker);
                         bw.Write(adp.frameTime);
                         bw.Write(adp.unk2);
-                        bw.Write(adp.unk3);
+                        bw.Write(adp.altFlag);
                         bw.Write(adp.ADPfuncID);
                         if (adp.is30fps)
                         {

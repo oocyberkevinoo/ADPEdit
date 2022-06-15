@@ -91,6 +91,12 @@ namespace ADPedit
                         comboBox2.Enabled = false;
                     }
 
+                    // Alt params
+                    if (curADP.altFlag != 0)
+                        checkBox_ALT_edit.Checked = true;
+                    else
+                        checkBox_ALT_edit.Checked = false;
+
                 }
                 catch (Exception) { }
             }
@@ -166,6 +172,13 @@ namespace ADPedit
                 {
                     unk = Code.headerlist[0].unkLayout;
                 }
+
+                // Alt flag
+                int altFlag = 0;
+                if (checkBox_ALT.Checked)
+                    altFlag = 1;
+
+
                 var newFunc = new adpFunc() //make a new adp function and store it in the FinalFunc var so it can be used in funcDetect
                 {
                     TimeID = 0,
@@ -176,6 +189,7 @@ namespace ADPedit
                     ADPfuncID = 0,
                     ADPfuncVal = funcValRead,
                     ADPfuncName = null,
+                    altFlag = altFlag,
                 };
                 newFunc = Code.funcDetectNoList(newFunc, comboBox1.Text, checkBox2.Checked);
                 Console.WriteLine(newFunc.ADPfuncName);
@@ -209,6 +223,7 @@ namespace ADPedit
                 string adpTrig = null;
                 string adpFunc = Code.adps[i].ADPfuncName;
                 string trigByteString = "";
+
                 /*foreach (Byte data in Code.adps[i].timeSecondsMarker)
                 {
                     trigByteString += data.ToString("00");
@@ -250,6 +265,11 @@ namespace ADPedit
                         continue;
                     }
                 }
+
+                // Alternate Params
+                if (Code.adps[i].altFlag != 0)
+                    frameTime += "{Alt} ";
+
                 string listName = frameTime + adpTrig + adpFunc + adpVal + unkFuncID;
                 if(adpFunc == "Unk." & Settings.Default.showUnk == false)
                 {
@@ -391,7 +411,10 @@ namespace ADPedit
 
         private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            int currentLine = listBox1.SelectedIndex;
             Code.updateADP();
+            refreshList();
+            listBox1.SelectedIndex = currentLine;
         }
 
         private void showUnk_Click(object sender, EventArgs e)
@@ -580,6 +603,19 @@ namespace ADPedit
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox_ALT_edit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Code.adps.Count > 0)
+            {
+                adpFunc curADP = Code.adps[listBox1.SelectedIndex];
+                if (checkBox_ALT_edit.Checked)
+                    curADP.altFlag = 1;
+                else
+                    curADP.altFlag = 0;
+                    
+            }
         }
     }
 }
