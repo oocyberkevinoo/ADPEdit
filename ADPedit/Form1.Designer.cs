@@ -39,6 +39,7 @@ namespace ADPedit
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_ALT_edit = new System.Windows.Forms.CheckBox();
             this.adpTrig = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -47,6 +48,7 @@ namespace ADPedit
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox_ALT = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -80,8 +82,7 @@ namespace ADPedit
             this.frameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.frameToolStripMenuItem = new System.Windows.Forms.ToolStripTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBox_ALT_edit = new System.Windows.Forms.CheckBox();
-            this.checkBox_ALT = new System.Windows.Forms.CheckBox();
+            this.textBox_funcID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -207,7 +208,9 @@ namespace ADPedit
             "Docked 30FPS Limit",
             "Handheld Resolution",
             "Docked Resolution",
-            "Alternative PV flag"});
+            "Alternative PV flag",
+            "---",
+            "UNKNOWN"});
             this.comboBox1.Location = new System.Drawing.Point(19, 34);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
@@ -238,6 +241,19 @@ namespace ADPedit
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
+            // 
+            // checkBox_ALT_edit
+            // 
+            this.checkBox_ALT_edit.AutoSize = true;
+            this.checkBox_ALT_edit.Location = new System.Drawing.Point(60, 179);
+            this.checkBox_ALT_edit.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_ALT_edit.Name = "checkBox_ALT_edit";
+            this.checkBox_ALT_edit.Size = new System.Drawing.Size(55, 17);
+            this.checkBox_ALT_edit.TabIndex = 21;
+            this.checkBox_ALT_edit.Text = "Alt PV";
+            this.toolTip1.SetToolTip(this.checkBox_ALT_edit, "Check this box to enable the function.\r\nUncheck this box to disable it.");
+            this.checkBox_ALT_edit.UseVisualStyleBackColor = true;
+            this.checkBox_ALT_edit.CheckedChanged += new System.EventHandler(this.checkBox_ALT_edit_CheckedChanged);
             // 
             // adpTrig
             // 
@@ -363,6 +379,7 @@ namespace ADPedit
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.textBox_funcID);
             this.groupBox2.Controls.Add(this.checkBox_ALT);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.checkBox2);
@@ -383,6 +400,18 @@ namespace ADPedit
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create";
+            // 
+            // checkBox_ALT
+            // 
+            this.checkBox_ALT.AutoSize = true;
+            this.checkBox_ALT.Location = new System.Drawing.Point(64, 179);
+            this.checkBox_ALT.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_ALT.Name = "checkBox_ALT";
+            this.checkBox_ALT.Size = new System.Drawing.Size(55, 17);
+            this.checkBox_ALT.TabIndex = 22;
+            this.checkBox_ALT.Text = "Alt PV";
+            this.toolTip1.SetToolTip(this.checkBox_ALT, "Check this box to enable the function.\r\nUncheck this box to disable it.");
+            this.checkBox_ALT.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
@@ -701,30 +730,17 @@ namespace ADPedit
             this.frameToolStripMenuItem.Text = "0";
             this.frameToolStripMenuItem.ToolTipText = "The frame on which you\'d like the macro to run";
             // 
-            // checkBox_ALT_edit
+            // textBox_funcID
             // 
-            this.checkBox_ALT_edit.AutoSize = true;
-            this.checkBox_ALT_edit.Location = new System.Drawing.Point(60, 179);
-            this.checkBox_ALT_edit.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox_ALT_edit.Name = "checkBox_ALT_edit";
-            this.checkBox_ALT_edit.Size = new System.Drawing.Size(55, 17);
-            this.checkBox_ALT_edit.TabIndex = 21;
-            this.checkBox_ALT_edit.Text = "Alt PV";
-            this.toolTip1.SetToolTip(this.checkBox_ALT_edit, "Check this box to enable the function.\r\nUncheck this box to disable it.");
-            this.checkBox_ALT_edit.UseVisualStyleBackColor = true;
-            this.checkBox_ALT_edit.CheckedChanged += new System.EventHandler(this.checkBox_ALT_edit_CheckedChanged);
-            // 
-            // checkBox_ALT
-            // 
-            this.checkBox_ALT.AutoSize = true;
-            this.checkBox_ALT.Location = new System.Drawing.Point(64, 179);
-            this.checkBox_ALT.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox_ALT.Name = "checkBox_ALT";
-            this.checkBox_ALT.Size = new System.Drawing.Size(55, 17);
-            this.checkBox_ALT.TabIndex = 22;
-            this.checkBox_ALT.Text = "Alt PV";
-            this.toolTip1.SetToolTip(this.checkBox_ALT, "Check this box to enable the function.\r\nUncheck this box to disable it.");
-            this.checkBox_ALT.UseVisualStyleBackColor = true;
+            this.textBox_funcID.Enabled = false;
+            this.textBox_funcID.Location = new System.Drawing.Point(98, 12);
+            this.textBox_funcID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_funcID.Name = "textBox_funcID";
+            this.textBox_funcID.Size = new System.Drawing.Size(61, 20);
+            this.textBox_funcID.TabIndex = 23;
+            this.textBox_funcID.Text = "0";
+            this.toolTip1.SetToolTip(this.textBox_funcID, "The frame on which this command will run.\r\nFrames for this setting are always cou" +
+        "nted in 60fps, \r\neven when the framerate is limited.\r\n");
             // 
             // Form1
             // 
@@ -810,6 +826,7 @@ namespace ADPedit
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox checkBox_ALT_edit;
         private System.Windows.Forms.CheckBox checkBox_ALT;
+        private System.Windows.Forms.TextBox textBox_funcID;
     }
 }
 

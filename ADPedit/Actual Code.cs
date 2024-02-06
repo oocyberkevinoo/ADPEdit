@@ -248,6 +248,7 @@ namespace ADPedit
             adps.Add(adp);
         }
 
+
         public static adpFunc funcDetectNoList(adpFunc newadp, string curText, bool enable)
         {
             newadp.ADPfuncName = curText;

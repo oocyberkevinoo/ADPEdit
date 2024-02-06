@@ -63,6 +63,7 @@ namespace ADPedit
                     AdpValue.Text = adpval;
                     AdpValue.Enabled = true;
                     adpTrig.Text = BitConverter.ToString(curADP.timeSecondsMarker).Replace("-", "") ;
+                    textBox3.Text = adpTrig.Text;
                     if (curADP.ADPfuncName != "Unk.")
                     {
                         comboBox2.Enabled = true;
@@ -191,7 +192,17 @@ namespace ADPedit
                     ADPfuncName = null,
                     altFlag = altFlag,
                 };
-                newFunc = Code.funcDetectNoList(newFunc, comboBox1.Text, checkBox2.Checked);
+                if(comboBox1.Text == "UNKNOWN")
+                {
+                    newFunc.ADPfuncID = uint.Parse(textBox_funcID.Text);
+
+                }
+                else
+                {
+                    newFunc = Code.funcDetectNoList(newFunc, comboBox1.Text, checkBox2.Checked);
+
+                }
+                
                 Console.WriteLine(newFunc.ADPfuncName);
                 return newFunc;
 
@@ -346,6 +357,7 @@ namespace ADPedit
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (comboBox1.Text == "Handheld 30FPS Limit" || comboBox1.Text == "Docked 30FPS Limit")
             {
                 checkBox2.Enabled = true;
@@ -356,6 +368,11 @@ namespace ADPedit
                 checkBox2.Enabled = false;
                 textBox2.Enabled = true;
             }
+
+            if (comboBox1.Text == "UNKNOWN")
+                textBox_funcID.Enabled = true;
+            else
+                textBox_funcID.Enabled = false;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
