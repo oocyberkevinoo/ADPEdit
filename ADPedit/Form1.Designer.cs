@@ -48,6 +48,7 @@ namespace ADPedit
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox_funcID = new System.Windows.Forms.TextBox();
             this.checkBox_ALT = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -82,7 +83,6 @@ namespace ADPedit
             this.frameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.frameToolStripMenuItem = new System.Windows.Forms.ToolStripTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox_funcID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -177,13 +177,16 @@ namespace ADPedit
             "Character Light (RED)",
             "Character Light (GREEN)",
             "Character Light (BLUE)",
+            "Character Light (ALPHA) [UNUSED]",
             "Character Color (RED)",
             "Character Color (GREEN)",
             "Character Color (BLUE)",
+            "Character Color (ALPHA) [UNUSED]",
             "Skin Shine",
             "Inner Skin Shine",
             "Shadow Intensity",
             "Shadow Opacity",
+            "Shadow Quality",
             "Skin Toon Intensity",
             "BLINN Lighting",
             "Cloth Lighting",
@@ -195,6 +198,13 @@ namespace ADPedit
             "Reflection (RED)",
             "Reflection (GREEN)",
             "Reflection (BLUE)",
+            "Reflection (ALPHA) [UNUSED]",
+            "DoF Quality",
+            "DoF Tile Size",
+            "DoF Prefilter Tap Num",
+            "DoF Main Filter Sample Division",
+            "DoF Upsample Tap Num",
+            "AET Opacity",
             "---",
             "Celshading Thickness",
             "Celshading Body",
@@ -326,13 +336,16 @@ namespace ADPedit
             "Character Light (RED)",
             "Character Light (GREEN)",
             "Character Light (BLUE)",
+            "Character Light (ALPHA) [UNUSED]",
             "Character Color (RED)",
             "Character Color (GREEN)",
             "Character Color (BLUE)",
+            "Character Color (ALPHA) [UNUSED]",
             "Skin Shine",
             "Inner Skin Shine",
             "Shadow Intensity",
             "Shadow Opacity",
+            "Shadow Quality",
             "Skin Toon Intensity",
             "BLINN Lighting",
             "Cloth Lighting",
@@ -344,6 +357,13 @@ namespace ADPedit
             "Reflection (RED)",
             "Reflection (GREEN)",
             "Reflection (BLUE)",
+            "Reflection (ALPHA) [UNUSED]",
+            "DoF Quality",
+            "DoF Tile Size",
+            "DoF Prefilter Tap Num",
+            "DoF Main Filter Sample Division",
+            "DoF Upsample Tap Num",
+            "AET Opacity",
             "---",
             "Celshading Thickness",
             "Celshading Body",
@@ -400,6 +420,18 @@ namespace ADPedit
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create";
+            // 
+            // textBox_funcID
+            // 
+            this.textBox_funcID.Enabled = false;
+            this.textBox_funcID.Location = new System.Drawing.Point(98, 12);
+            this.textBox_funcID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_funcID.Name = "textBox_funcID";
+            this.textBox_funcID.Size = new System.Drawing.Size(61, 20);
+            this.textBox_funcID.TabIndex = 23;
+            this.textBox_funcID.Text = "0";
+            this.toolTip1.SetToolTip(this.textBox_funcID, "The frame on which this command will run.\r\nFrames for this setting are always cou" +
+        "nted in 60fps, \r\neven when the framerate is limited.\r\n");
             // 
             // checkBox_ALT
             // 
@@ -729,18 +761,6 @@ namespace ADPedit
             this.frameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.frameToolStripMenuItem.Text = "0";
             this.frameToolStripMenuItem.ToolTipText = "The frame on which you\'d like the macro to run";
-            // 
-            // textBox_funcID
-            // 
-            this.textBox_funcID.Enabled = false;
-            this.textBox_funcID.Location = new System.Drawing.Point(98, 12);
-            this.textBox_funcID.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox_funcID.Name = "textBox_funcID";
-            this.textBox_funcID.Size = new System.Drawing.Size(61, 20);
-            this.textBox_funcID.TabIndex = 23;
-            this.textBox_funcID.Text = "0";
-            this.toolTip1.SetToolTip(this.textBox_funcID, "The frame on which this command will run.\r\nFrames for this setting are always cou" +
-        "nted in 60fps, \r\neven when the framerate is limited.\r\n");
             // 
             // Form1
             // 

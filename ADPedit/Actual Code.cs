@@ -145,6 +145,9 @@ namespace ADPedit
                 case 4:
                     adp.ADPfuncName = "Character Light (BLUE)";
                     break;
+                case 5:
+                    adp.ADPfuncName = "Character Light (ALPHA) [UNUSED]";
+                    break;
                 case 6:
                     adp.ADPfuncName = "Character Color (RED)";
                     break;
@@ -154,6 +157,9 @@ namespace ADPedit
                 case 8:
                     adp.ADPfuncName = "Character Color (BLUE)";
                     break;
+                case 9:
+                    adp.ADPfuncName = "Character Color (ALPHA) [UNUSED]";
+                    break;
                 case 10:
                     adp.ADPfuncName = "Reflection (RED)";
                     break;
@@ -162,6 +168,9 @@ namespace ADPedit
                     break;
                 case 12:
                     adp.ADPfuncName = "Reflection (BLUE)";
+                    break;
+                case 13:
+                    adp.ADPfuncName = "Reflection (ALPHA) [UNUSED]";
                     break;
                 case 14:
                     adp.ADPfuncName = "Spec. Map Transparency";
@@ -208,6 +217,24 @@ namespace ADPedit
                 case 46:
                     adp.ADPfuncName = "Stage Lighting";
                     break;
+                case 48:
+                    adp.ADPfuncName = "Shadow Quality";
+                    break;
+                case 49:
+                    adp.ADPfuncName = "DoF Quality";
+                    break;
+                case 52:
+                    adp.ADPfuncName = "DoF Tile Size";
+                    break;
+                case 53:
+                    adp.ADPfuncName = "DoF Prefilter Tap Num";
+                    break;
+                case 54:
+                    adp.ADPfuncName = "DoF Main Filter Sample Division";
+                    break;
+                case 55:
+                    adp.ADPfuncName = "DoF Upsample Tap Num";
+                    break;
                 case 57:
                     adp.ADPfuncName = "Hair Shine";
                     break;
@@ -241,6 +268,9 @@ namespace ADPedit
                 case 78:
                     adp.ADPfuncName = "Docked Resolution";
                     break;
+                case 79:
+                    adp.ADPfuncName = "AET Opacity";
+                    break;
                 default:
                     adp.ADPfuncName = "Unk.";
                     break;
@@ -271,6 +301,9 @@ namespace ADPedit
                 case "Character Light (BLUE)":
                     newadp.ADPfuncID = 4;
                     break;
+                case "Character Light (ALPHA) [UNUSED]":
+                    newadp.ADPfuncID = 5;
+                    break;
                 case "Character Color (RED)":
                     newadp.ADPfuncID = 6;
                     break;
@@ -280,6 +313,9 @@ namespace ADPedit
                 case "Character Color (BLUE)":
                     newadp.ADPfuncID = 8;
                     break;
+                case "Character Color (ALPHA) [UNUSED]":
+                    newadp.ADPfuncID = 9;
+                    break;
                 case "Reflection (RED)":
                     newadp.ADPfuncID = 10;
                     break;
@@ -288,6 +324,9 @@ namespace ADPedit
                     break;
                 case "Reflection (BLUE)":
                     newadp.ADPfuncID = 12;
+                    break;
+                case "Reflection (ALPHA) [UNUSED]":
+                    newadp.ADPfuncID = 13;
                     break;
                 case "Spec. Map Transparency":
                     newadp.ADPfuncID = 14;
@@ -334,6 +373,24 @@ namespace ADPedit
                 case "Stage Lighting":
                     newadp.ADPfuncID = 46;
                     break;
+                case "Shadow Quality":
+                    newadp.ADPfuncID = 48;
+                    break;
+                case "DoF Quality":
+                    newadp.ADPfuncID = 49;
+                    break;
+                case "DoF Tile Size":
+                    newadp.ADPfuncID = 52;
+                    break;
+                case "DoF Prefilter Tap Num":
+                    newadp.ADPfuncID = 53;
+                    break;
+                case "DoF Main Filter Sample Division":
+                    newadp.ADPfuncID = 54;
+                    break;
+                case "DoF Upsample Tap Num":
+                    newadp.ADPfuncID = 55;
+                    break;
                 case "Hair Shine":
                     newadp.ADPfuncID = 57;
                     break;
@@ -374,6 +431,9 @@ namespace ADPedit
                     break;
                 case "Docked Resolution":
                     newadp.ADPfuncID = 78;
+                    break;
+                case "AET Opacity":
+                    newadp.ADPfuncID = 79;
                     break;
                 default:
                     newadp.ADPfuncName = "Unk.";
