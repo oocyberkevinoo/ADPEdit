@@ -129,17 +129,18 @@ namespace ADPedit
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 628);
+            this.label2.Location = new System.Drawing.Point(8, 602);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.MaximumSize = new System.Drawing.Size(648, 28);
-            this.label2.MinimumSize = new System.Drawing.Size(324, 14);
+            this.label2.MaximumSize = new System.Drawing.Size(648, 45);
+            this.label2.MinimumSize = new System.Drawing.Size(324, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(324, 26);
+            this.label2.Size = new System.Drawing.Size(324, 45);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Program by Jay39w. Special thanks to BroGamer and korenkonder!\r\nUpdated by CyberK" +
-    "evin";
+            this.label2.Text = "Program by Jay39w; Updated by CyberKevin\r\nSpecial thanks to BroGamer, korenkonder" +
+    " and Dandy Bleat!\r\n1.4 [01/19/2025]";
             this.toolTip1.SetToolTip(this.label2, "Huge thanks to BroGamer for helping me\r\nwith the code used in this project!\r\nAlso" +
         " many thanks to korenkonder for figuring\r\nout the header format for ADP files!");
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // AdpValue
             // 
@@ -218,6 +219,11 @@ namespace ADPedit
             "Docked 30FPS Limit",
             "Handheld Resolution",
             "Docked Resolution",
+            "Heavy Module Graphical Limiter Handheld",
+            "Heavy Module Graphical Limiter Docked",
+            "Trigger -> 30 fps limit and graphics",
+            "No Reflection on Heavy PV",
+            "No Reflection when no PV Weight",
             "Alternative PV flag",
             "---",
             "UNKNOWN"});
@@ -377,6 +383,11 @@ namespace ADPedit
             "Docked 30FPS Limit",
             "Handheld Resolution",
             "Docked Resolution",
+            "Heavy Module Graphical Limiter Handheld",
+            "Heavy Module Graphical Limiter Docked",
+            "Trigger -> 30 fps limit and graphics",
+            "No Reflection on Heavy PV",
+            "No Reflection when no PV Weight",
             "Alternative PV flag"});
             this.comboBox2.Location = new System.Drawing.Point(15, 34);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -469,6 +480,7 @@ namespace ADPedit
             this.checkBox2.Text = "Enable/Disable";
             this.toolTip1.SetToolTip(this.checkBox2, "Check this box to enable the function.\r\nUncheck this box to disable it.\r\n");
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // label10
             // 

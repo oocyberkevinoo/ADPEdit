@@ -217,6 +217,9 @@ namespace ADPedit
                 case 46:
                     adp.ADPfuncName = "Stage Lighting";
                     break;
+                case 47:
+                    adp.ADPfuncName = "Heavy Module Graphical Limiter Handheld";
+                    break;
                 case 48:
                     adp.ADPfuncName = "Shadow Quality";
                     break;
@@ -253,8 +256,20 @@ namespace ADPedit
                 case 63:
                     adp.ADPfuncName = "Shadow Opacity";
                     break;
+                case 64:
+                    adp.ADPfuncName = "Heavy Module Graphical Limiter Docked";
+                    break;
+                case 67:
+                    adp.ADPfuncName = "Trigger -> 30 fps limit and graphics";
+                    break;
+                case 71:
+                    adp.ADPfuncName = "No Reflection on Heavy PV";
+                    break;
                 case 72:
                     adp.ADPfuncName = "Eye Colour Saturation";
+                    break;
+                case 74:
+                    adp.ADPfuncName = "No Reflection when no PV Weight";
                     break;
                 case 75:
                     adp.ADPfuncName = "Handheld 30FPS Limit";
@@ -373,6 +388,9 @@ namespace ADPedit
                 case "Stage Lighting":
                     newadp.ADPfuncID = 46;
                     break;
+                case "Heavy Module Graphical Limiter Handheld":
+                    newadp.ADPfuncID = 47;
+                    break;
                 case "Shadow Quality":
                     newadp.ADPfuncID = 48;
                     break;
@@ -409,8 +427,28 @@ namespace ADPedit
                 case "Shadow Opacity":
                     newadp.ADPfuncID = 63;
                     break;
+                case "Heavy Module Graphical Limiter Docked":
+                    newadp.ADPfuncID = 64;
+                    break;
+                case "Trigger -> 30 fps limit and graphics":
+                    newadp.ADPfuncID = 67;
+                    break;
+                case "No Reflection on Heavy PV":
+                    newadp.ADPfuncID = 71;
+                    if (enable)
+                    {
+                        newadp.ADPfuncVal = 0.3999939f;
+                    }
+                    break;
                 case "Eye Colour Saturation":
                     newadp.ADPfuncID = 72;
+                    break;
+                case "No Reflection when no PV Weight":
+                    newadp.ADPfuncID = 74;
+                    if (enable)
+                    {
+                        newadp.ADPfuncVal = 0.3999939f;
+                    }
                     break;
                 case "Handheld 30FPS Limit":
                     newadp.ADPfuncID = 75;

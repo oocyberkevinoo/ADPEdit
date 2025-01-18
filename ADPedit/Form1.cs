@@ -69,26 +69,30 @@ namespace ADPedit
                         comboBox2.Enabled = true;
                         checkBox1.Enabled = false;
                         comboBox2.SelectedItem = curADP.ADPfuncName;
-                        if (curADP.ADPfuncName == "Handheld 30FPS Limit" || curADP.ADPfuncName == "Docked 30FPS Limit")
+                        if (curADP.ADPfuncName == "Handheld 30FPS Limit" || curADP.ADPfuncName == "Docked 30FPS Limit" || 
+                            curADP.ADPfuncName == "No Reflection on Heavy PV" || curADP.ADPfuncName == "No Reflection when no PV Weight")
                         {
                             checkBox1.Enabled = true;
                             AdpValue.Enabled = false;
-                            if (curADP.ADPfuncVal == 0.8750001f || curADP.ADPfuncVal == 0.6750001f)
+                            if (curADP.ADPfuncVal > 0.0f)
                             {
                                 checkBox1.Checked = true;
-                                curADP.is30fps = true;
+                                if(curADP.ADPfuncVal == 0.8750001f || curADP.ADPfuncVal == 0.6750001f)
+                                    curADP.is30fps = true;
                             }
                             else 
                             { 
                                 checkBox1.Checked = false;
-                                curADP.is30fps = false;
+                                if(curADP.ADPfuncVal == 0.8750001f || curADP.ADPfuncVal == 0.6750001f)
+                                    curADP.is30fps = false;
                             }
                         }
-                        else { checkBox1.Enabled = false; }
+                        else { checkBox1.Enabled = false; checkBox1.Checked = false; }
                     }
                     else
                     {
                         checkBox1.Enabled = false;
+                        checkBox1.Checked = false;
                         comboBox2.Enabled = false;
                     }
 
@@ -304,7 +308,8 @@ namespace ADPedit
                     try
                     {
                         bool chek = false;
-                        if(comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit")
+                        if(comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit" ||
+                            comboBox2.Text == "No Reflection on Heavy PV" || comboBox2.Text == "No Reflection when no PV Weight")
                         {
                             chek = checkBox1.Checked;
                         }
@@ -342,13 +347,30 @@ namespace ADPedit
                 {
                     if (checkBox1.Checked)
                     {
-                        curADP.is30fps = true;
-                        curADP.ADPfuncVal = 0.8750001f;
+                        float x = 0.0f;
+                        if (comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit")
+                        {
+                            curADP.is30fps = true;
+                            x = 0.8750001f;
+                        }
+                        else if (comboBox2.Text == "No Reflection on Heavy PV" || comboBox2.Text == "No Reflection when no PV Weight")
+                            x = 0.3999939f;
+
+                        curADP.ADPfuncVal = x;
                     }
                     else 
                     { 
-                        curADP.ADPfuncVal = 0.875f;
-                        curADP.is30fps = false;
+                        
+                        float x = 0.0f;
+                        if (comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit")
+                        {
+                            curADP.ADPfuncVal = 0.875f;
+                            curADP.is30fps = false;
+                        }
+                        else if (comboBox2.Text == "No Reflection on Heavy PV" || comboBox2.Text == "No Reflection when no PV Weight")
+                            x = 0.0f;
+
+                        curADP.ADPfuncVal = x;
                     }
                 }
                 catch (Exception) { }
@@ -358,7 +380,9 @@ namespace ADPedit
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (comboBox1.Text == "Handheld 30FPS Limit" || comboBox1.Text == "Docked 30FPS Limit")
+            if (comboBox1.Text == "Handheld 30FPS Limit" || comboBox1.Text == "Docked 30FPS Limit" || 
+                comboBox1.Text == "No Reflection on Heavy PV" ||
+                comboBox1.Text == "No Reflection when no PV Weight")
             {
                 checkBox2.Enabled = true;
                 textBox2.Enabled = false;
@@ -633,6 +657,16 @@ namespace ADPedit
                     curADP.altFlag = 0;
                     
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
