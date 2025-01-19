@@ -345,33 +345,37 @@ namespace ADPedit
                 adpFunc curADP = Code.adps[listBox1.SelectedIndex];
                 try
                 {
-                    if (checkBox1.Checked)
+                    if (checkBox1.Enabled)
                     {
-                        float x = 0.0f;
-                        if (comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit")
+                        if (checkBox1.Checked)
                         {
-                            curADP.is30fps = true;
-                            x = 0.8750001f;
-                        }
-                        else if (comboBox2.Text == "No Reflection on Heavy PV" || comboBox2.Text == "No Reflection when no PV Weight")
-                            x = 0.3999939f;
+                            float x = 0.0f;
+                            if (comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit")
+                            {
+                                curADP.is30fps = true;
+                                x = 0.8750001f;
+                            }
+                            else if (comboBox2.Text == "No Reflection on Heavy PV" || comboBox2.Text == "No Reflection when no PV Weight")
+                                x = 0.3999939f;
 
-                        curADP.ADPfuncVal = x;
-                    }
-                    else 
-                    { 
-                        
-                        float x = 0.0f;
-                        if (comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit")
+                            curADP.ADPfuncVal = x;
+                        }
+                        else
                         {
-                            curADP.ADPfuncVal = 0.875f;
-                            curADP.is30fps = false;
-                        }
-                        else if (comboBox2.Text == "No Reflection on Heavy PV" || comboBox2.Text == "No Reflection when no PV Weight")
-                            x = 0.0f;
 
-                        curADP.ADPfuncVal = x;
+                            float x = 0.0f;
+                            if (comboBox2.Text == "Handheld 30FPS Limit" || comboBox2.Text == "Docked 30FPS Limit")
+                            {
+                                curADP.ADPfuncVal = 0.875f;
+                                curADP.is30fps = false;
+                            }
+                            else if (comboBox2.Text == "No Reflection on Heavy PV" || comboBox2.Text == "No Reflection when no PV Weight")
+                                x = 0.0f;
+
+                            curADP.ADPfuncVal = x;
+                        }
                     }
+                   
                 }
                 catch (Exception) { }
             }
